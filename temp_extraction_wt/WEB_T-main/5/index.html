@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form Validation</title>
+
+    <script>
+        function validateForm() {
+
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var gender1 = document.getElementById("male").checked;
+            var gender2 = document.getElementById("female").checked;
+            var course = document.getElementById("course").value;
+
+            // Name validation
+            if (name == "") {
+                alert("Name must be filled out");
+                return false;
+            }
+
+            // Email validation
+            var emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if (!email.match(emailPattern)) {
+                alert("Enter a valid email address");
+                return false;
+            }
+
+            // Password validation
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters");
+                return false;
+            }
+
+            // Gender validation
+            if (!gender1 && !gender2) {
+                alert("Please select gender");
+                return false;
+            }
+
+            // Course validation
+            if (course == "select") {
+                alert("Please select a course");
+                return false;
+            }
+
+            alert("Registration Successful!");
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+
+<h2>Registration Form</h2>
+
+<form onsubmit="return validateForm()">
+
+    Name:
+    <input type="text" id="name"><br><br>
+
+    Email:
+    <input type="text" id="email"><br><br>
+
+    Password:
+    <input type="password" id="password"><br><br>
+
+    Gender:
+    <input type="radio" id="male" name="gender"> Male
+    <input type="radio" id="female" name="gender"> Female
+    <br><br>
+
+    Course:
+    <select id="course">
+        <option value="select">Select</option>
+        <option>B.Tech</option>
+        <option>M.Tech</option>
+        <option>MCA</option>
+    </select>
+    <br><br>
+
+    <input type="submit" value="Register">
+
+</form>
+
+</body>
+</html>

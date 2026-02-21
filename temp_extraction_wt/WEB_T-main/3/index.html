@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+</head>
+
+<body>
+
+<h2 align="center">Student Registration Form</h2>
+
+<form>
+
+<table align="center">
+
+    <tr>
+        <td>Full Name:</td>
+        <td><input type="text" name="fullname" required></td>
+    </tr>
+
+    <tr>
+        <td>Email:</td>
+        <td><input type="email" name="email" required></td>
+    </tr>
+
+    <tr>
+        <td>Password:</td>
+        <td><input type="password" name="password" required></td>
+    </tr>
+
+    <tr>
+        <td>Gender:</td>
+        <td>
+            <input type="radio" name="gender"> Male
+            <input type="radio" name="gender"> Female
+        </td>
+    </tr>
+
+    <tr>
+        <td>Course:</td>
+        <td>
+            <select name="course">
+                <option>Select</option>
+                <option>B.Tech</option>
+                <option>M.Tech</option>
+                <option>MCA</option>
+                <option>BCA</option>
+            </select>
+        </td>
+    </tr>
+
+    <tr>
+        <td>Skills:</td>
+        <td>
+            <input type="checkbox"> C
+            <input type="checkbox"> Java
+            <input type="checkbox"> Python
+            <input type="checkbox"> Web Development
+        </td>
+    </tr>
+
+    <tr>
+        <td>Address:</td>
+        <td>
+            <textarea rows="3" cols="20"></textarea>
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="2" align="center">
+            <input type="submit" value="Register">
+            <input type="reset" value="Clear">
+        </td>
+    </tr>
+
+</table>
+
+</form>
+
+</body>
+</html>

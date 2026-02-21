@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <title>DOM Manipulation</title>
+        <script>
+            function Validate() {
+                var rn = document.getElementById('roll');
+                if(rn.value == "") {
+                    document.getElementById('txtroll').style.color = "red";
+                }
+                else {
+                    document.getElementById('txtroll').style.color = "black";
+                }
+
+                //alert(rn.value);
+                var el = document.getElementsByName('cb');
+                //alert(el[0].value);
+                //alert(el[1].value);
+                //alert(el[2].value);
+            }
+        </script>
+    </head>
+    <body>
+        <center><h1>Students Registration Form</h1>
+            <form method='get' action=''>
+            <table border='1' cellspacing="0">
+                <tr>
+                    <td><label id='txtroll'>Roll No</label></div></td>
+                    <td><input type='text' id='roll' name='roll' onmouseover="mouseoverroll();" onmouseout="mouseoutroll();"><div id='mousetext'></div></td>
+                </tr>
+                <tr>
+                    <td>Student Name</td>
+                    <td><input type='text' id='sname' name='sname'></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input type='password' id='pwd' name='pwd'></td>
+                </tr>
+                <tr>
+                    <td>Confirm Password</td>
+                    <td><input type='password' id='cpwd' name='cpwd'></td>
+                </tr>
+                <tr>
+                    <td>Section</td>
+                    <td>
+                        <input type='radio' id='sec' name='sec' value='A'> Sec-A <br>
+                        <input type='radio' id='sec' name='sec' value='B'> Sec-B <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Electives</td>
+                    <td>
+                        <input type='checkbox' id='cb1' name='cb' value='cs401'> Java <br>
+                        <input type='checkbox' id='cb2' name='cb' value='cs402'> Python <br>
+                        <input type='checkbox' id='cb3' name='cb' value='cs403'> Safety <br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td>
+                        <textarea id='addr' name='addr'></textarea> 
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type='button' id='sb' name='sb' value='Submit' onclick='Validate();'>
+                        <input type='reset' id='rb' name='rb'>
+                    </td>
+                </tr>
+                </table>
+            </form>
+            </center>
+    </body>
+
+    <script>
+        function mouseoverroll() {
+            document.getElementById('mousetext').innerHTML = "xxxx-xx-xxx-xxx";
+        }
+
+        function mouseoutroll() {
+            document.getElementById('mousetext').innerHTML = "";
+        }
+    </script>
+
+</html>

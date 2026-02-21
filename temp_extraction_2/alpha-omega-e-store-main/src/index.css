@@ -1,0 +1,290 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Alpha & Omega Design System - Premium Spiritual Fashion */
+
+@layer base {
+  :root {
+    /* Core Colors - HSL Values */
+    --background: 0 0% 96%; /* #F5F5F5 - Off-white */
+    --foreground: 240 4% 12%; /* #1C1C1E - Near black */
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 4% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 4% 12%;
+
+    /* Spiritual Gold - Primary accent */
+    --primary: 44 52% 55%; /* #C8A951 */
+    --primary-foreground: 240 4% 12%;
+
+    /* Secondary - Light gray */
+    --secondary: 0 0% 92%;
+    --secondary-foreground: 240 4% 12%;
+
+    /* Muted */
+    --muted: 0 0% 90%;
+    --muted-foreground: 240 4% 40%;
+
+    /* Accent - Gold */
+    --accent: 44 52% 55%;
+    --accent-foreground: 240 4% 12%;
+
+    /* Deep Navy */
+    --navy: 219 30% 24%; /* #2A364E */
+    --navy-foreground: 0 0% 96%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 44 52% 55%;
+
+    --radius: 0.25rem;
+
+    /* Premium Effects */
+    --gold-glow: 0 0 30px hsla(44, 52%, 55%, 0.3);
+    --shadow-soft: 0 4px 20px hsla(240, 4%, 12%, 0.08);
+    --shadow-hover: 0 8px 40px hsla(240, 4%, 12%, 0.12);
+
+    /* Sidebar defaults */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 44 52% 55%;
+  }
+
+  .dark {
+    --background: 240 4% 12%;
+    --foreground: 0 0% 96%;
+
+    --card: 240 4% 15%;
+    --card-foreground: 0 0% 96%;
+
+    --popover: 240 4% 15%;
+    --popover-foreground: 0 0% 96%;
+
+    --primary: 44 52% 55%;
+    --primary-foreground: 240 4% 12%;
+
+    --secondary: 240 4% 20%;
+    --secondary-foreground: 0 0% 96%;
+
+    --muted: 240 4% 25%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 44 52% 55%;
+    --accent-foreground: 240 4% 12%;
+
+    --navy: 219 30% 24%;
+    --navy-foreground: 0 0% 96%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 4% 25%;
+    --input: 240 4% 25%;
+    --ring: 44 52% 55%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 44 52% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 44 52% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  /* Premium Button Styles */
+  .btn-gold {
+    @apply inline-flex items-center justify-center px-8 py-4 text-sm font-medium tracking-widest uppercase transition-all duration-500;
+    @apply bg-primary text-primary-foreground;
+    @apply hover:shadow-lg hover:-translate-y-0.5;
+    letter-spacing: 0.2em;
+  }
+
+  .btn-gold-outline {
+    @apply inline-flex items-center justify-center px-8 py-4 text-sm font-medium tracking-widest uppercase transition-all duration-500;
+    @apply border border-primary text-primary bg-transparent;
+    @apply hover:bg-primary hover:text-primary-foreground;
+    letter-spacing: 0.2em;
+  }
+
+  .btn-dark {
+    @apply inline-flex items-center justify-center px-8 py-4 text-sm font-medium tracking-widest uppercase transition-all duration-500;
+    @apply bg-foreground text-background;
+    @apply hover:bg-foreground/90 hover:-translate-y-0.5;
+    letter-spacing: 0.2em;
+  }
+
+  /* Premium Link Underline Animation */
+  .link-underline {
+    @apply relative;
+  }
+
+  .link-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-px bg-primary transform scale-x-0 origin-right transition-transform duration-500;
+  }
+
+  .link-underline:hover::after {
+    @apply scale-x-100 origin-left;
+  }
+
+  /* Gold Text */
+  .text-gold {
+    @apply text-primary;
+  }
+
+  /* Section Spacing */
+  .section-padding {
+    @apply py-20 md:py-32 px-6 md:px-12 lg:px-20;
+  }
+
+  /* Product Card Hover */
+  .product-card {
+    @apply transition-all duration-500;
+  }
+
+  .product-card:hover {
+    @apply -translate-y-2;
+  }
+
+  .product-card:hover .product-image {
+    @apply scale-105;
+  }
+}
+
+@layer utilities {
+  /* Fade In Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 1s ease-out forwards;
+  }
+
+  .animate-slide-in {
+    animation: slideIn 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animate-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animate-delay-500 {
+    animation-delay: 500ms;
+  }
+
+  /* Letter Spacing */
+  .tracking-supreme {
+    letter-spacing: 0.3em;
+  }
+
+  /* Gold Gradient Text */
+  .text-gradient-gold {
+    background: linear-gradient(135deg, hsl(44, 52%, 55%) 0%, hsl(44, 52%, 70%) 50%, hsl(44, 52%, 55%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}

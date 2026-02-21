@@ -1,0 +1,12 @@
+1. write the code in app.js
+2. open terminal
+3. npm init -y
+4. npm install express
+5. node app.js
+
+
+http://localhost:3000/
+http://localhost:3000/user/101
+http://localhost:3000/product/mobile/55
+http://localhost:3000/search?name=Affan&age=21
+

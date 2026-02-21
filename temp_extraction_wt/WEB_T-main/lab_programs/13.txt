@@ -1,0 +1,32 @@
+var MongoClient = require('mongodb').MongoClient;
+var url = "mongodb://localhost:27017/mymongodb";
+
+MongoClient.connect(url, function(err, db) {
+  if (err) throw err;
+  console.log("Database created!");
+  db.close();
+});
+
+MongoClient.connect(url, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db("mymongodb");
+    dbo.createCollection("students", function(err, res) {
+      if (err) throw err;
+      console.log("Collection created!");
+      db.close();
+    });
+});
+
+Create folder "13"
+Open VS Code
+Goto file->open folder "13" and select folder "13"
+
+Open terminal and execute:
+//In College Proxy: npm config set proxy http://10.2.0.25:3128
+Run npm init -y
+Run npm install mongodb@4.1.0
+
+Click new file in the explorer window
+Name the file as index.js
+Type the code from index.js file
+

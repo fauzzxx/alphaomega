@@ -1,0 +1,12 @@
+create model controler and view folders
+create 
+        app.js
+        userView.html
+        userModel.js
+        userController.js
+
+
+npm init -y
+npm install express
+node app.js
+http://localhost:3000/user

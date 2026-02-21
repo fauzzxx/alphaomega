@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Handling & DOM Manipulation</title>
+
+    <script>
+        function changeText() {
+            document.getElementById("text").innerHTML =
+                "Text changed using DOM Manipulation!";
+        }
+
+        function changeColor() {
+            document.body.style.backgroundColor = "lightblue";
+        }
+
+        function showMessage() {
+            document.getElementById("msg").innerHTML =
+                "Mouse Over Event Triggered!";
+        }
+    </script>
+</head>
+
+<body>
+
+    <h2 id="text">Original Text</h2>
+
+    <button onclick="changeText()">Change Text</button>
+    <button onclick="changeColor()">Change Background</button>
+
+    <br><br>
+
+    <p id="msg" onmouseover="showMessage()">
+        Hover over this text
+    </p>
+
+</body>
+</html>

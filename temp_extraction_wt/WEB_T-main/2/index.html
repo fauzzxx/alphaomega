@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Static Website using DIV and CSS</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .navbar {
+            background-color: #34495e;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .navbar a {
+            color: rgba(255, 255, 255, 0.664);
+            margin: 15px;
+            text-decoration: none;
+        }
+
+        .content {
+            display: flex;
+            padding: 20px;
+        }
+
+        .main {
+            width: 70%;
+            padding: 20px;
+        }
+
+        .sidebar {
+            width: 30%;
+            padding: 20px;
+            background-color: #ecf0f1;
+        }
+
+        .footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>CSI MJCET</h1>
+        <p>Computer Society of India - MJCET</p>
+    </div>
+
+    <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Events</a>
+        <a href="#">Team</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <div class="content">
+        <div class="main">
+            <h2>Welcome</h2>
+            <p>
+                CSI MJCET is a professional student chapter that conducts
+                workshops, hackathons, seminars, and technical events
+                to enhance students' skills.
+            </p>
+
+            <h3>Objectives</h3>
+            <ul>
+                <li>Promote technical learning</li>
+                <li>Encourage innovation</li>
+                <li>Industry exposure</li>
+            </ul>
+        </div>
+
+        <div class="sidebar">
+            <h3>Latest Updates</h3>
+            <p>=> Hackathon registrations open</p>
+            <p>=> AI Workshop coming soon</p>
+            <p>=> Project Expo winners announced</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2025 CSI MJCET | All Rights Reserved</p>
+    </div>
+
+</body>
+</html>

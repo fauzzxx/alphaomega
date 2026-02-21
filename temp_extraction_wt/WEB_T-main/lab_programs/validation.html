@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <title>Dynamic Web Content Page</title>
+        <script>
+            function validate() {
+                var rn = document.getElementById('roll');
+                if(rn.value== "") {
+                    alert("Roll No Cannot be Empty");
+                    return false;
+                }
+                if (rn.value.search(/[0-9]{4}-[0-9]{2}-[0-9]{3}-[0-9]{3}$/)!=0) {
+                    alert('Invaliad Roll Number');
+                    return false;
+                }
+                var sn=document.getElementById("sname");
+                if (sn.value == "" || sn.value.search(/[A-Z a-z]*$/)!=0) {
+                    alert('Invaliad Name');
+                    return false;
+                }
+                var pass = document.getElementById('pwd');
+                var cpass = document.getElementById('cpwd');
+                if(pass.value == "" || cpass.value== "" || pass.value != cpass.value) {
+                    alert("Password donot Match");
+                    pass.focus();
+                    return false;
+                }
+                var pho=document.getElementById("ph");
+                if (pho.value.search(/[0-9]{10}$/)!=0) {
+                    alert('Invaliad Phone Number');
+                    return false;
+                }
+                var em=document.getElementById("email");
+                if (em.value.search(/[A-Z a-z 0-9._]*@[A-Z a-z]*\.[A-Z a-z]*$/)==0)
+                {
+                    return true;
+              	}
+                else {
+                    alert("Not a valid e-mail address");
+                    return false;
+                }
+            }
+        </script>
+      
+    </head>
+    <body>
+        <center><h1>Students Registration Form</h1>
+            <form method='get' action='' onsubmit="return validate();">
+            <table border='1' cellspacing="0">
+                <tr><td>Roll No</td><td><input type='text' id='roll' name='roll'></td></tr>
+                <tr><td>Student Name</td><td><input type='text' id='sname' name='sname'></td></tr>
+                <tr><td>Password</td><td><input type='password' id='pwd' name='pwd'></td></tr>
+                <tr><td>Confirm Password</td><td><input type='password' id='cpwd' name='cpwd'></td></tr>
+                <tr><td>Phone</td><td><input type='text' id='ph' name='ph'></td></tr>
+                <tr><td>E-mail</td><td><input type='text' id='email' name='email'></td></tr>
+                <tr><td>Address</td><td><textarea id='addr' name='addr'></textarea></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type='submit' id='sb' name='sb'>
+                        <input type='reset' id='rb' name='rb'>
+                    </td>
+                </tr>
+                </table>
+            </form>
+        </center>        
+    </body>
+</html>

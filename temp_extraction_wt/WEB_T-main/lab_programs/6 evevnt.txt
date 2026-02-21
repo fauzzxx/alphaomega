@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <title>Event Handling</title>
+    <script>
+      function instructions() {
+        alert("Read the Instructions Carefully...");
+      }
+      function validate(){
+        alert("Validation...");
+      }
+      function clean() {
+        alert("Cleaning Process....");
+      }
+      function ptadisplay() {
+        document.getElementById("pta").disabled = true;
+      }
+        function focusdisplay() {
+            var inptext = document.getElementById('phone');
+            inptext.style.color = 'red';
+        }
+        function blurdisplay() {
+            var inptext = document.getElementById('phone');
+            inptext.style.color = 'black';
+        }
+    </script>
+  </head>
+  <body onload="instructions();">
+    <h1>Javascript Event Handling Demo</h1>
+    <form onsubmit="validate();" onreset="clean();">
+      Name: <input type="text" id="sname" onblur="alert('Name Required');"><br><br>
+      Phone No: <input type="text" id="phone" onfocus="focusdisplay()"; onblur="blurdisplay();"><br><br>
+      Contact Address:<textarea id="cta"></textarea> <br><br>
+      Permanent Address:<textarea id="pta"></textarea> <br><br>
+      <input type="button" value="Same as Contact Address" id="bt1" onclick="ptadisplay();" /> <br><br>
+      <a href="" id="l1" >Read Instructions</a><br><br>
+      <input type="submit" id="sb"><br><br>
+      <input type="reset" id="sb"><br><br>
+      <input type="button" value="Button-3" id="bt3"/> <br><br>
+    </form>
+  </body>
+  <script>
+    var link = document.getElementById('l1');
+    link.onclick =  function () {
+        alert('Instructions Clicked...');
+    }
+
+    var b3 = document.getElementById('bt3');
+    b3.addEventListener("click", function () {
+        alert('Button-3 Clicked Listener-1');
+    }, false);
+    b3.addEventListener("click", function () {
+        alert('Button-3 Clicked Listener-2');
+    }, false);
+
+  </script>
+</html>
