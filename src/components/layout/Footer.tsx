@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Instagram, Facebook, Mail } from "lucide-react";
+import Logo from "@/components/Logo";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -8,11 +9,11 @@ const Footer = () => {
     <footer className="bg-navy text-navy-foreground">
       <div className="max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
-          {/* Brand */}
+          {/* Brand - same logo everywhere (gold on cream) */}
           <div className="md:col-span-2">
-            <h3 className="font-serif text-2xl md:text-3xl mb-4">
-              <span className="text-primary">α</span> & <span className="text-primary">ω</span>
-            </h3>
+            <div className="mb-4">
+              <Logo href="/" size="lg" />
+            </div>
             <p className="text-navy-foreground/70 text-sm leading-relaxed max-w-md mb-6">
               Minimalist, high-quality apparel blending timeless faith, purpose, and meaning
               with contemporary fashion and modern design. Subtle, premium, spiritually inspired.

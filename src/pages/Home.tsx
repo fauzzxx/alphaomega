@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import ProductCard from "@/components/ProductCard";
 import { getFeaturedProducts } from "@/data/products";
 import heroBg from "@/assets/hero-bg.jpg";
+import Logo from "@/components/Logo";
 
 const Home = () => {
   const featuredProducts = getFeaturedProducts();
@@ -22,9 +23,9 @@ const Home = () => {
 
         {/* Content */}
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-          <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-background mb-6 opacity-0 animate-fade-in">
-            <span className="text-gradient-gold">α</span> <span className="italic text-foreground/80">&</span> <span className="text-gradient-gold">Ω</span>
-          </h1>
+          <div className="mb-6 opacity-0 animate-fade-in flex justify-center">
+            <Logo href="/" size="hero" imgClassName="drop-shadow-xl brightness-0 invert" />
+          </div>
           <p className="text-background/80 text-lg md:text-xl font-light tracking-wide mb-4 opacity-0 animate-fade-in animate-delay-200">
             The Beginning & The End
           </p>

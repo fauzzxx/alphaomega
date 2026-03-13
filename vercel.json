@@ -5,5 +5,11 @@
   "installCommand": "npm install && cd backend && npm install",
   "rewrites": [
     { "source": "/((?!api/).*)", "destination": "/index.html" }
-  ]
+  ],
+  "functions": {
+    "api/[[...path]].js": {
+      "runtime": "nodejs20.x",
+      "maxDuration": 30
+    }
+  }
 }

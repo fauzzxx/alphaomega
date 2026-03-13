@@ -5,18 +5,20 @@ import { supabase } from '../lib/supabase.js';
 
 const router = express.Router();
 
-// Configure storage for payment screenshots
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, 'uploads/orders/');
-    },
-    filename: (req, file, cb) => {
-        const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
-        cb(null, 'payment-' + uniqueSuffix + path.extname(file.originalname));
-    }
-});
+// On Vercel (serverless) use memory storage; locally use disk for payment screenshots
+const storage = process.env.VERCEL
+    ? multer.memoryStorage()
+    : multer.diskStorage({
+        destination: (req, file, cb) => {
+            cb(null, 'uploads/orders/');
+        },
+        filename: (req, file, cb) => {
+            const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+            cb(null, 'payment-' + uniqueSuffix + path.extname(file.originalname));
+        }
+    });
 
-const upload = multer({ storage: storage });
+const upload = multer({ storage });
 
 // Helper to generate ORD-YYYY-XXXXX format
 function generateOrderReference() {

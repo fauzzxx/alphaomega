@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Star, Shield, Heart } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg"; // Using existing asset for now
+import heroBg from "@/assets/hero-bg.jpg";
+import Logo from "@/components/Logo";
 
 const LandingPage = () => {
     return (
@@ -17,9 +18,9 @@ const LandingPage = () => {
                     <p className="text-primary font-medium tracking-[0.3em] uppercase mb-6 opacity-0 animate-fade-in">
                         Premium Spiritual Apparel
                     </p>
-                    <h1 className="font-serif text-6xl md:text-8xl lg:text-9xl text-white mb-8 opacity-0 animate-fade-in animate-delay-100 leading-tight">
-                        Alpha <span className="text-primary">&</span> Omega
-                    </h1>
+                    <div className="mb-8 opacity-0 animate-fade-in animate-delay-100 flex justify-center">
+                        <Logo href="/" size="hero" imgClassName="drop-shadow-xl brightness-0 invert" />
+                    </div>
                     <p className="text-gray-200 text-lg md:text-2xl font-light tracking-wide mb-12 max-w-2xl mx-auto opacity-0 animate-fade-in animate-delay-200">
                         Timeless fashion that speaks to your soul. Designed for the beginning, the end, and everything in between.
                     </p>

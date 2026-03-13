@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ShoppingBag, User, ShieldCheck } from "lucide-react";
+import { Menu, X, ShoppingBag, ShieldCheck } from "lucide-react";
 import { useCart } from "@/context/CartContext";
+import Logo from "@/components/Logo";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -64,15 +65,10 @@ const Header = () => {
             ))}
           </div>
 
-          {/* Logo */}
-          <Link
-            to="/"
-            className="absolute left-1/2 transform -translate-x-1/2"
-          >
-            <span className="font-serif text-4xl md:text-5xl font-bold tracking-tight text-gradient-gold">
-              α &amp; Ω
-            </span>
-          </Link>
+          {/* Logo - gold α & Ω on cream (first logo) */}
+          <div className="absolute left-1/2 transform -translate-x-1/2">
+            <Logo href="/" size="lg" />
+          </div>
 
           {/* Right Icons: Admin, Account, Cart */}
           <div className="flex items-center space-x-4 md:space-x-6">
